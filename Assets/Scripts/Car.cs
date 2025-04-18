@@ -22,6 +22,8 @@ public class Car : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (GameManager.Instance.isGameOver) return; // Check if the game is over, if so, do not process input
+
         moveInput = Input.GetAxis("Vertical"); // Get vertical input (W/S or Up/Down arrows)
         turnInput = Input.GetAxis("Horizontal"); // Get horizontal input (A/D or Left/Right arrows)
         MoveCar();
